@@ -1,0 +1,10 @@
+**/.idea
+dist/*
+node_modules
+node_modules/*
+_dev
+.env
+.DS_Store
+index-dev.html
+www/_testdata
+.netlify
