@@ -71,7 +71,7 @@ module.exports = {
       hot: true
   },
   plugins: [
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({filename: "bundle.css"})
   ],
   resolve: {
     extensions: ['*', '.js', '.vue', '.json'],
