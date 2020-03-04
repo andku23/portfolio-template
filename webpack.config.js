@@ -1,4 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const webpack = require("webpack");
 const path = require("path");
 
 let cssLoaders = [
@@ -71,7 +73,9 @@ module.exports = {
       hot: true
   },
   plugins: [
-    new MiniCssExtractPlugin({filename: "bundle.css"})
+    new MiniCssExtractPlugin({filename: "bundle.css"}),
+    new VueLoaderPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     extensions: ['*', '.js', '.vue', '.json'],
