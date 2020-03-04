@@ -3,10 +3,10 @@ const path = require("path");
 
 let cssLoaders = [
   "style-loader",
+  MiniCssExtractPlugin.loader,
   "css-loader",
   "postcss-loader",
-  "sass-loader",
-  MiniCssExtractPlugin.loader
+  "sass-loader"
 ]
 
 module.exports = {
@@ -70,6 +70,9 @@ module.exports = {
       overlay: true,
       hot: true
   },
+  plugins: [
+    new MiniCssExtractPlugin()
+  ],
   resolve: {
     extensions: ['*', '.js', '.vue', '.json'],
       alias: {

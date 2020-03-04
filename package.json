@@ -4,20 +4,21 @@
 	"description": "Portfolio template for displaying projects and work experience",
 	"author": "andku23",
 	"scripts": {
-	    "start": "webpack && pushd serve && npm install && popd && ./serve/serve -d www -n -p 8081",
-	    "build": "webpack --mode production",
-	    "start:dev": "webpack-dev-server",
-	    "start:windows": "webpack && pushd serve && npm install && popd && cd www && ws --https && cd ..",
-	    "packtheweb" : "webpack"
-	  },
+		"start": "webpack && pushd serve && npm install && popd && ./serve/serve -d www -n -p 8081",
+		"build": "webpack --mode production",
+		"start:dev": "webpack-dev-server",
+		"start:windows": "webpack && pushd serve && npm install && popd && cd www && ws --https && cd ..",
+		"packtheweb": "webpack"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.8.6",
 		"@babel/preset-env": "^7.8.6",
+		"autoprefixer": "^9.7.4",
 		"babel-loader": "^8.0.6",
 		"copy-webpack-plugin": "^5.1.1",
 		"css-loader": "^3.4.2",
 		"file-loader": "^5.1.0",
-		"mini-css-extract-plugin": "^0.9.0",
+		"mini-css-extract-plugin": "^0.5.0",
 		"node-sass": "^4.13.1",
 		"postcss-loader": "^3.0.0",
 		"sass-loader": "^8.0.2",
