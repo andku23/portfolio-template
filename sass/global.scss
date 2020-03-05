@@ -1,0 +1,26 @@
+// Global SASS Classes
+
+%fill{
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+%absolute-fill{
+  @extend %fill;
+  position:absolute;
+  left: 0;
+  top: 0;
+}
+
+%relative-fill{
+  @extend %fill;
+  position:relative;
+}
+
+// App id encapsulate site in index.html
+
+#app{
+  
+}
