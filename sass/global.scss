@@ -19,8 +19,15 @@
   position:relative;
 }
 
+%flex-parent-center{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+}
+
 // App id encapsulate site in index.html
 
 #app{
-  
+
 }
