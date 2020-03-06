@@ -1,7 +1,7 @@
 <template>
     <div class = "fill-container">
         <transition name = "fade">
-            <InitialLoader />
+            <InitialLoader v-if = "this.initialLoaderEnabled" />
         </transition>
     </div>
 </template>
@@ -11,7 +11,15 @@
 
     export default {
         name: "landing.vue",
-        components: {InitialLoader}
+        components: {InitialLoader},
+        data: function() {
+            return {
+                initialLoaderEnabled: false
+            }
+        },
+        mounted() {
+            this.initialLoaderEnabled = true;
+        }
     }
 </script>
 

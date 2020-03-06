@@ -2,9 +2,11 @@
     <div class = "fill-container initial-loader">
         <div class="background"/>
         <div class = "loading-center">
-            <div class = "loading-text">
-                <div class = "text">{{this.loadingText[this.textIndex]}}</div>
-            </div>
+            <transition name = "fade">
+                <div class = "loading-text" v-if = "this.textVisible">
+                    <div class = "text">{{this.loadingText[this.textIndex]}}</div>
+                </div>
+            </transition>
         </div>
     </div>
 </template>
@@ -19,16 +21,29 @@
                     "Text 2"
                 ],
                 textInterval: 4000,
-                textIndex: 0
+                textIndex: 0,
+                textVisible: true
             }
         },
-        mounted: function() {
+        mounted() {
+            setTimeout(() => {
+                this.runLoadingText();
+            }, this.textInterval);
         },
         methods: {
             runLoadingText(){
+                this.textVisible = false;
                 setTimeout(() => {
-
-                }, this.textInterval);
+                    this.incrementLoadingText();
+                    this.textVisible = true;
+                    setTimeout(() => {
+                        this.runLoadingText();
+                    }, this.textInterval);
+                }, 3000);
+            },
+            incrementLoadingText(){
+                this.textIndex++;
+                this.textIndex = ((this.textIndex >= this.loadingText.length) ? 0 : this.textIndex);
             }
         }
     }
