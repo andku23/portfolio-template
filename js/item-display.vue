@@ -15,7 +15,6 @@
     .item-display{
         position:relative;
         width: vw(1920);
-        height: vw(700);
 
         .background{
             @extend %absolute-fill;
