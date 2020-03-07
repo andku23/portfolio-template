@@ -31,3 +31,17 @@
 #app{
 
 }
+
+:root {
+  --vh: 1vh;
+  --vw: 1vw;
+}
+
+// Global function
+
+// returns vw assuming 1920 width given pixel size
+@function vw($pxSize, $design-width: 1920){
+  $size: $pxSize / $design-width;
+
+  @return calc(var(--vw) * #{$size * 100});
+}

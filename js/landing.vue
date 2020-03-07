@@ -19,6 +19,9 @@
         },
         mounted() {
             this.initialLoaderEnabled = true;
+            setTimeout(() => {
+                this.$router.push({ path: 'home' });
+            }, 3000)
         }
     }
 </script>
